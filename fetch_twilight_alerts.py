@@ -46,7 +46,7 @@ def queries_for_twilight_alerts(twilight_obs_info: list, start_time: Time, end_t
                 "catalog": "ZTF_alerts",
                 "filter": {
                     "candidate.jd": {
-                        "$gte": jd_start - 0.00011,
+                        "$gte": jd_start - 0.000075,
                         "$lte": jd_end,
                     }
                 },
