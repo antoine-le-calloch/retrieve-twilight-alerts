@@ -31,7 +31,7 @@ def load_twilight_obs_info(parquet_file: Path) -> list:
 
 if __name__ == "__main__":
     fetch_twilight_obs_after = Time("2018-11-01T00:00:00.000", scale="utc")
-    fetch_twilight_alerts_after = Time("2024-12-18T09:02:53.000", scale="utc")
+    fetch_twilight_alerts_after = Time("2018-11-01T00:00:00.000", scale="utc")
     kowalski = get_kowalski(verbose=True)
 
     # Fetch twilight observations info and save them to a parquet file
