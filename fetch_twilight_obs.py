@@ -17,7 +17,7 @@ def queries_for_twilight_obs(start_time: Time) -> list:
     Returns:
         list: List of queries to be run in Kowalski
     """
-    n_processes = cfg.get("kowalski.n_processes", 1)
+    n_processes = cfg.get("kowalski.n_processes") or 1
     queries = []
     start_jd = start_time.jd
     step = (Time.now().jd - start_jd) / n_processes
