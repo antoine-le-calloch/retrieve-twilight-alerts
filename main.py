@@ -63,6 +63,6 @@ if __name__ == "__main__":
                 start_time,
                 end_time if end_time <= Time.now() else Time.now(),
             )
-            start_time = end_time.iso
+            start_time = end_time
 
     print("\nFinished.")
