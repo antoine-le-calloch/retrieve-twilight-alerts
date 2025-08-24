@@ -56,7 +56,7 @@ if __name__ == "__main__":
     else:
         while start_time <= Time.now():
             end_time = Time(start_time.jd + days_per_step, format="jd", scale="utc")
-            print(f"Processing time range: {start_time.iso} to {end_time.iso}")
+            print(f"Processing time range: {start_time.iso} to {end_time.iso if end_time <= Time.now() else 'now'}")
             alerts_file = fetch_twilight_alerts(
                 kowalski,
                 twilight_obs_info,

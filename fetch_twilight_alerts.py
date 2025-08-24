@@ -116,7 +116,7 @@ def fetch_twilight_alerts(
     file_path.parent.mkdir(parents=True, exist_ok=True)
 
     if file_path.exists():
-        print(f"File {file_path} already created. Skipping fetching alerts.")
+        print(f"File {file_path.name} already created. Skipping fetching alerts.")
         return file_path
     else:
         matching_files = list(file_path.parent.glob(f"twilight_alerts_{format_time(start_time)}*.json"))
@@ -145,7 +145,7 @@ def fetch_twilight_alerts(
         twilight_obs_info
     )
 
-    print(f"Writing {len(results)} results to {file_path}...")
+    print(f"Writing {len(results)} results to {file_path.name}...")
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
 
