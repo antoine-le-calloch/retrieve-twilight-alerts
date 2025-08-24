@@ -1,0 +1,5 @@
+astropy==7.1.0
+pandas==2.3.1
+pyarrow==21.0.0
+PyYAML==6.0.2
+penquins==2.4.2

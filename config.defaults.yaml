@@ -1,0 +1,21 @@
+kowalski:
+  protocol: https
+  host: kowalski.caltech.edu
+  port: 443
+  token: <your_token_here>
+  n_processes:
+
+path_to:
+  obs: "/path/to/data"
+  alerts: "/path/to/output"
+
+parameters:
+  days_per_step: 365
+  # Process alerts in steps of 'days_per_step' days.
+  # This approach avoids loading too much data at once and allows
+  # the script to continue from where it left off in case of interruptions.
+  # For each step:
+  #   1. Compute the end of the current time range. (start + days_per_step)
+  #   2. Fetch twilight alerts from Kowalski for this period.
+  #   3. Save the alerts to a JSON file.
+  #   4. Move to the next time range until reaching the current time.
