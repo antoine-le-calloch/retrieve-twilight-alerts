@@ -10,6 +10,7 @@ path_to:
   alerts: "/path/to/output"
 
 parameters:
+  refresh_observations: true  # Refresh the observation parquet with the latest data
   days_per_step: 365
   # Process alerts in steps of 'days_per_step' days.
   # This approach avoids loading too much data at once and allows

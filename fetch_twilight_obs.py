@@ -55,11 +55,11 @@ def fetch_twilight_obs(kowalski, start_time: Time) -> Path:
     Returns:
         Path: path to the parquet file with the observations
     """
-    file_name = f'extracted_obs_jd_{format_time(start_time)}.parquet'
+    file_name = f'extracted_obs_{format_time(start_time)}.parquet'
     file_path = Path(cfg["path_to.obs"]) / file_name
     file_path.parent.mkdir(parents=True, exist_ok=True)
 
-    if os.path.exists(file_path):
+    if os.path.exists(file_path) and not cfg.get("parameters.refresh_observations"):
         print(f"File {file_path} already created. Skipping fetching observations.")
         return file_path
 

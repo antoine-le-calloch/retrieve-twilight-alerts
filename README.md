@@ -35,4 +35,4 @@ Delete the existing observations file to re-fetch them with the latest data.
 The alerts will always be updated to ensure the latest information is retrieved.
 
 ## Todo
-- [ ] Allow the observation file to update automatically when there is new data available.
+- [ ] Allow the observation file on update to only fetch new observations
