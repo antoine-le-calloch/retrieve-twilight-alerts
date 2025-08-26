@@ -55,6 +55,10 @@ def queries_for_twilight_alerts(twilight_obs_info: list, start_time: Time, end_t
                     "candid": 1,
                     "objectId": 1,
                     "candidate.jd": 1,
+                    "candidate.ra": 1,
+                    "candidate.dec": 1,
+                    "candidate.magpsf": 1,
+                    "candidate.sigmapsf": 1,
                     "candidate.pdiffimfilename": 1,
                 },
             },
@@ -87,7 +91,14 @@ def filter_twilight_alerts(alerts: list, obs_list: list):
                 continue
 
             nb_twilight_alerts += 1
-            twilight_alerts.append(alert)
+            twilight_alerts.append({
+                "objectId": alert['objectId'],
+                "jd": alert['candidate']['jd'],
+                "ra": alert['candidate']['ra'],
+                "dec": alert['candidate']['dec'],
+                "magpsf": alert['candidate']['magpsf'],
+                "sigmapsf": alert['candidate']['sigmapsf'],
+            })
             seen_ids.add(alert['candid'])
 
     print(f"Found {nb_twilight_alerts} twilight alerts in {len(alerts)} alerts")
