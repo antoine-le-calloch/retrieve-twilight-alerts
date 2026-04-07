@@ -54,6 +54,7 @@ def queries_for_twilight_alerts(twilight_obs_info: list, start_time: Time, end_t
                     "_id": 0,
                     "candid": 1,
                     "objectId": 1,
+                    "candidate.fid": 1,
                     "candidate.jd": 1,
                     "candidate.ra": 1,
                     "candidate.dec": 1,
@@ -93,6 +94,7 @@ def filter_twilight_alerts(alerts: list, obs_list: list):
             nb_twilight_alerts += 1
             twilight_alerts.append({
                 "objectId": alert['objectId'],
+                "filter": alert['candidate']['fid'],
                 "jd": alert['candidate']['jd'],
                 "ra": alert['candidate']['ra'],
                 "dec": alert['candidate']['dec'],
